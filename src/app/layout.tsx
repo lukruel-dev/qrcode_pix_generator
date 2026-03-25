@@ -14,11 +14,17 @@ const manrope = Manrope({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  themeColor: "#4b0082",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Pix Flow - Cobrança Instantânea",
   description: "Gere QRCodes PIX de forma simples e rápida.",
   manifest: "/manifest.json",
-  themeColor: "#4b0082",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
