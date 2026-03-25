@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pix Charge - Seleção de Banco</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#ddb7ff",
+              "surface-bright": "#fdf8fd",
+              "primary-fixed": "#f0dbff",
+              "on-error": "#ffffff",
+              "tertiary": "#002208",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed": "#00210b",
+              "inverse-surface": "#313034",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#69ff87",
+              "surface-container-high": "#ebe7ec",
+              "inverse-on-surface": "#f4eff5",
+              "secondary-fixed": "#62ff96",
+              "secondary-container": "#3fff8b",
+              "on-surface": "#1c1b1f",
+              "surface-container-highest": "#e5e1e7",
+              "on-tertiary-fixed-variant": "#00531e",
+              "on-primary-fixed-variant": "#622599",
+              "on-primary-fixed": "#2c0050",
+              "tertiary-container": "#003a13",
+              "secondary-fixed-dim": "#00e475",
+              "on-primary-container": "#ba7ef4",
+              "outline": "#7d7483",
+              "surface-dim": "#ddd9de",
+              "surface-container-low": "#f7f2f8",
+              "on-tertiary-fixed": "#002108",
+              "outline-variant": "#cec3d3",
+              "surface": "#fdf8fd",
+              "on-secondary-container": "#007237",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#3ce36a",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#1c1b1f",
+              "surface-variant": "#e5e1e7",
+              "on-surface-variant": "#4c4451",
+              "on-secondary": "#ffffff",
+              "primary-container": "#4b0082",
+              "background": "#fdf8fd",
+              "primary": "#2e0052",
+              "on-tertiary-container": "#00b148",
+              "on-secondary-fixed-variant": "#005226",
+              "secondary": "#006d35",
+              "surface-container": "#f1ecf2",
+              "error-container": "#ffdad6",
+              "surface-tint": "#7b41b3",
+              "inverse-primary": "#ddb7ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(253, 248, 253, 0.8);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-fixed selection:text-primary min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fdf8fd]/80 backdrop-blur-xl flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4B0082]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<h1 class="font-['Manrope'] font-extrabold tracking-tight text-lg text-[#2e0052]">Pix Charge</h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Section: Select Bank -->
+<section class="mb-12">
+<h2 class="font-headline font-bold text-2xl mb-2 tracking-tight">Escolha o banco</h2>
+<p class="font-label text-on-surface-variant text-sm mb-6">Selecione onde você deseja receber seu Pix.</p>
+<!-- Bento Grid of Banks -->
+<div class="grid grid-cols-2 md:grid-cols-2 gap-4">
+<!-- Bank Card 1 (Active/Selected) -->
+<button class="relative group flex flex-col items-start p-6 bg-primary-container rounded-[2rem] text-left transition-transform active:scale-95 duration-200 shadow-xl overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="w-12 h-12 rounded-2xl bg-surface-container-lowest/20 flex items-center justify-center mb-12">
+<span class="material-symbols-outlined text-surface-container-lowest text-3xl" data-icon="account_balance">account_balance</span>
+</div>
+<span class="font-headline font-extrabold text-surface-container-lowest text-xl">Nubank</span>
+<span class="font-label text-primary-fixed-dim text-xs opacity-80">Conta Corrente</span>
+</button>
+<!-- Bank Card 2 -->
+<button class="flex flex-col items-start p-6 bg-surface-container-low rounded-[2rem] text-left transition-transform active:scale-95 duration-200 hover:bg-surface-container-high">
+<div class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center mb-12">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="payments">payments</span>
+</div>
+<span class="font-headline font-bold text-on-surface text-xl">Itaú</span>
+<span class="font-label text-on-surface-variant text-xs">Poupança</span>
+</button>
+<!-- Bank Card 3 -->
+<button class="flex flex-col items-start p-6 bg-surface-container-low rounded-[2rem] text-left transition-transform active:scale-95 duration-200 hover:bg-surface-container-high">
+<div class="w-12 h-12 rounded-2xl bg-white flex items-center justify-center mb-12">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<span class="font-headline font-bold text-on-surface text-xl">Inter</span>
+<span class="font-label text-on-surface-variant text-xs">Empresarial</span>
+</button>
+<!-- Add New Bank -->
+<button class="flex flex-col items-center justify-center p-6 border-2 border-dashed border-outline-variant rounded-[2rem] transition-colors hover:border-primary group">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center mb-2 group-hover:bg-primary-fixed">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary" data-icon="add">add</span>
+</div>
+<span class="font-label text-on-surface-variant font-medium text-sm group-hover:text-primary">Adicionar</span>
+</button>
+</div>
+</section>
+<!-- Section: Set Value (The Focus State) -->
+<section class="bg-surface-container-low rounded-[2.5rem] p-8 mb-8">
+<div class="text-center mb-8">
+<p class="font-label text-on-surface-variant text-sm mb-2">Quanto você quer receber no <span class="text-primary font-bold">Nubank</span>?</p>
+<div class="flex items-center justify-center gap-1">
+<span class="font-headline font-extrabold text-4xl text-primary opacity-40">R$</span>
+<span class="font-headline font-extrabold text-6xl text-primary tracking-tighter">150,00</span>
+</div>
+</div>
+<!-- Custom Numerical Keypad -->
+<div class="grid grid-cols-3 gap-y-4 gap-x-8 max-w-sm mx-auto">
+<button class="h-16 flex items-center justify-center font-headline font-bold text-2xl rounded-full hover:bg-surface-container-highest active:scale-90 transition-all">1</button>
+<button class="h-16 flex items-center justify-center font-headline font-bold text-2xl rounded-full hover:bg-surface-container-highest active:scale-90 transition-all">2</button>
+<button class="h-16 flex items-center justify-center font-headline font-bold text-2xl rounded-full hover:bg-surface-container-highest active:scale-90 transition-all">3</button>
+<button class="h-16 flex items-center justify-center font-headline font-bold text-2xl rounded-full hover:bg-surface-container-highest active:scale-90 transition-all">4</button>
+<button class="h-16 flex items-center justify-center font-headline font-bold text-2xl rounded-full hover:bg-surface-container-highest active:scale-90 transition-all">5</button>
+<button class="h-16 flex items-center justify-center font-headline font-bold text-2xl rounded-full hover:bg-surface-container-highest active:scale-90 transition-all">6</button>
+<button class="h-16 flex items-center justify-center font-headline font-bold text-2xl rounded-full hover:bg-surface-container-highest active:scale-90 transition-all">7</button>
+<button class="h-16 flex items-center justify-center font-headline font-bold text-2xl rounded-full hover:bg-surface-container-highest active:scale-90 transition-all">8</button>
+<button class="h-16 flex items-center justify-center font-headline font-bold text-2xl rounded-full hover:bg-surface-container-highest active:scale-90 transition-all">9</button>
+<button class="h-16 flex items-center justify-center font-headline font-bold text-2xl rounded-full hover:bg-surface-container-highest active:scale-90 transition-all">,</button>
+<button class="h-16 flex items-center justify-center font-headline font-bold text-2xl rounded-full hover:bg-surface-container-highest active:scale-90 transition-all">0</button>
+<button class="h-16 flex items-center justify-center font-headline font-bold text-2xl rounded-full hover:bg-surface-container-highest active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="backspace">backspace</span>
+</button>
+</div>
+</section>
+<!-- CTA Action -->
+<div class="px-2">
+<button class="w-full h-16 bg-gradient-to-br from-primary to-primary-container text-surface-container-lowest font-headline font-bold text-lg rounded-full shadow-lg flex items-center justify-center gap-3 transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="qr_code_2">qr_code_2</span>
+                Gerar QR Code
+            </button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#fdf8fd]/80 backdrop-blur-xl z-50 rounded-t-[32px] shadow-[0_-4px_32px_rgba(28,27,31,0.04)]">
+<a class="flex flex-col items-center justify-center bg-[#e5e1e7] text-[#2e0052] rounded-full px-5 py-2 active:scale-90 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49454f] px-5 py-2 hover:bg-[#f1ecf2] rounded-full active:scale-90 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="vpn_key">vpn_key</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Chaves</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49454f] px-5 py-2 hover:bg-[#f1ecf2] rounded-full active:scale-90 transition-all duration-300 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Histórico</span>
+</a>
+</nav>
+<!-- Visual Polish: Decorative Transfer Glow in background -->
+<div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-secondary-container opacity-10 blur-[100px] -z-10 pointer-events-none"></div>
+</body></html>

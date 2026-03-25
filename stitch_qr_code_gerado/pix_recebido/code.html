@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#00210b",
+              "tertiary": "#002208",
+              "on-secondary-container": "#007237",
+              "error": "#ba1a1a",
+              "inverse-primary": "#ddb7ff",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#ebe7ec",
+              "on-primary-fixed-variant": "#622599",
+              "on-tertiary-fixed": "#002108",
+              "surface-dim": "#ddd9de",
+              "secondary": "#006d35",
+              "on-primary-container": "#ba7ef4",
+              "inverse-surface": "#313034",
+              "surface-tint": "#7b41b3",
+              "outline-variant": "#cec3d3",
+              "secondary-fixed": "#62ff96",
+              "surface-container-low": "#f7f2f8",
+              "surface": "#fdf8fd",
+              "tertiary-container": "#003a13",
+              "inverse-on-surface": "#f4eff5",
+              "secondary-fixed-dim": "#00e475",
+              "on-error-container": "#93000a",
+              "on-background": "#1c1b1f",
+              "secondary-container": "#3fff8b",
+              "on-secondary-fixed-variant": "#005226",
+              "background": "#fdf8fd",
+              "tertiary-fixed": "#69ff87",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed-variant": "#00531e",
+              "surface-variant": "#e5e1e7",
+              "on-tertiary-container": "#00b148",
+              "primary-fixed-dim": "#ddb7ff",
+              "primary-fixed": "#f0dbff",
+              "on-error": "#ffffff",
+              "surface-bright": "#fdf8fd",
+              "primary-container": "#4b0082",
+              "error-container": "#ffdad6",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#7d7483",
+              "on-surface-variant": "#4c4451",
+              "tertiary-fixed-dim": "#3ce36a",
+              "on-surface": "#1c1b1f",
+              "surface-container": "#f1ecf2",
+              "surface-container-highest": "#e5e1e7",
+              "primary": "#2e0052",
+              "on-primary-fixed": "#2c0050"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .gradient-primary {
+        background: linear-gradient(135deg, #2e0052 0%, #4b0082 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="w-full top-0 z-50 no-border bg-[#f7f2f8] dark:bg-[#2b2930] flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#4B0082] dark:text-[#d0bcff]">menu</span>
+<h1 class="font-['Manrope'] font-bold tracking-tight text-xl font-extrabold text-[#2e0052] dark:text-[#e6e1e5]">Pix Instantâneo</h1>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest border-2 border-primary/10">
+<img alt="Avatar do usuário" class="w-full h-full object-cover" data-alt="Foto de perfil de um homem sorrindo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHXV-uRV3w4SAVoDiledhXSzyJyxpjetqxJSrWaCn9cO6SbE9DYE9JJlUbSq_CFlxGb9texuGcUUtBcQYdIEgAgFNS8tIj4pgWkIw1XiPsCo2RfJvNUGRmtN4aL6ugl-LPp_q2LVzA0pZ1d8NybHQbToKwYQvtO6CX22Fd13utQj29KYNG1TG1CxXcsT-Rsn92ktIOc0eHipYA-F1TKjJ-MB_qeIHtPPtnvPVFnRetOMH75XQlO5U8BIDZDJhthCYzDDOuCbwYlpgj"/>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col items-center justify-center px-6 py-12">
+<!-- Transfer Glow Signature Component -->
+<div class="relative w-full max-w-md">
+<!-- Glow Background Effect -->
+<div class="absolute inset-0 bg-secondary-container/20 blur-3xl rounded-full scale-110"></div>
+<!-- Main Confirmation Card -->
+<div class="relative bg-surface-container-lowest rounded-xl p-8 flex flex-col items-center text-center shadow-sm">
+<!-- Success Icon -->
+<div class="w-24 h-24 bg-secondary-fixed rounded-full flex items-center justify-center mb-8 shadow-lg shadow-secondary/10">
+<span class="material-symbols-outlined text-on-secondary-fixed text-5xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<!-- Editorial Headline -->
+<p class="text-on-surface-variant font-label text-sm uppercase tracking-widest mb-2">Dinheiro Recebido</p>
+<h2 class="text-primary font-headline font-extrabold text-5xl tracking-tight mb-8">R$ 150,00</h2>
+<!-- Info Section with Tonal Layering (No Lines Rule) -->
+<div class="w-full space-y-4 mb-10">
+<div class="bg-surface-container-low rounded-lg p-4 flex flex-col items-center">
+<span class="text-on-surface-variant font-label text-xs mb-1">Pagador</span>
+<span class="text-on-surface font-headline font-bold text-lg">Ricardo M. Oliveira</span>
+</div>
+<div class="grid grid-cols-2 gap-4 w-full">
+<div class="bg-surface-container-low/50 rounded-lg p-3">
+<span class="text-on-surface-variant font-label text-xs block mb-1">Data</span>
+<span class="text-on-surface font-label font-medium text-sm">24 Out 2023</span>
+</div>
+<div class="bg-surface-container-low/50 rounded-lg p-3">
+<span class="text-on-surface-variant font-label text-xs block mb-1">Horário</span>
+<span class="text-on-surface font-label font-medium text-sm">14:22:05</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="w-full space-y-4">
+<button class="w-full gradient-primary text-on-primary py-4 rounded-full font-headline font-bold text-base shadow-lg shadow-primary/20 active:scale-95 transition-all duration-200">
+                        Voltar ao Início
+                    </button>
+<button class="w-full bg-surface-container-high text-primary py-4 rounded-full font-headline font-bold text-base hover:bg-surface-container-highest transition-colors active:scale-95 duration-200">
+                        Compartilhar Comprovante
+                    </button>
+</div>
+</div>
+</div>
+<!-- Editorial Secondary Section (Asymmetric Layout) -->
+<div class="w-full max-w-md mt-8 px-2">
+<div class="flex items-center justify-between p-4 bg-secondary-fixed/10 rounded-xl">
+<div class="flex items-center gap-3">
+<div class="bg-secondary text-on-secondary w-8 h-8 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<span class="font-headline font-bold text-on-surface text-sm">Transferência Instantânea</span>
+</div>
+<span class="font-label text-xs text-secondary font-bold">Via Pix</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full rounded-t-[24px] z-50 bg-[#fdf8fd]/80 dark:bg-[#1c1b1f]/80 backdrop-blur-xl shadow-[0_-4px_32px_0_rgba(28,27,31,0.04)] no-line bg-[#f7f2f8] dark:bg-[#2b2930] flex justify-around items-center px-4 pb-6 pt-3 w-full">
+<!-- Início (Active based on context of returning home) -->
+<a class="flex flex-col items-center justify-center bg-[#e5e1e7] dark:bg-[#49454f] text-[#2e0052] dark:text-[#e6e1e5] rounded-full px-5 py-1.5 active:scale-90 duration-150 transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Início</span>
+</a>
+<!-- Cobrar -->
+<a class="flex flex-col items-center justify-center text-[#49454f] dark:text-[#cac4d0] px-5 py-1.5 hover:opacity-80 active:scale-90 duration-150 transition-all" href="#">
+<span class="material-symbols-outlined">qr_code_2</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Cobrar</span>
+</a>
+<!-- Histórico -->
+<a class="flex flex-col items-center justify-center text-[#49454f] dark:text-[#cac4d0] px-5 py-1.5 hover:opacity-80 active:scale-90 duration-150 transition-all" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Histórico</span>
+</a>
+<!-- Ajustes -->
+<a class="flex flex-col items-center justify-center text-[#49454f] dark:text-[#cac4d0] px-5 py-1.5 hover:opacity-80 active:scale-90 duration-150 transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Ajustes</span>
+</a>
+</nav>
+<!-- Spacer for Bottom Nav -->
+<div class="h-24"></div>
+</body></html>

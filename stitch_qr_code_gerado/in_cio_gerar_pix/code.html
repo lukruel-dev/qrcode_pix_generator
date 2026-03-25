@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pix Pro - Gerar QR Code</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#f0dbff",
+              "inverse-on-surface": "#f4eff5",
+              "on-primary": "#ffffff",
+              "on-tertiary-container": "#00b148",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#ddd9de",
+              "primary-container": "#4b0082",
+              "secondary": "#006d35",
+              "inverse-primary": "#ddb7ff",
+              "on-surface": "#1c1b1f",
+              "on-error": "#ffffff",
+              "tertiary": "#002208",
+              "outline-variant": "#cec3d3",
+              "on-primary-fixed": "#2c0050",
+              "primary-fixed-dim": "#ddb7ff",
+              "surface-container": "#f1ecf2",
+              "tertiary-container": "#003a13",
+              "on-secondary-container": "#007237",
+              "on-background": "#1c1b1f",
+              "on-primary-container": "#ba7ef4",
+              "inverse-surface": "#313034",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f7f2f8",
+              "error": "#ba1a1a",
+              "background": "#fdf8fd",
+              "surface-bright": "#fdf8fd",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed-variant": "#005226",
+              "surface-tint": "#7b41b3",
+              "surface": "#fdf8fd",
+              "on-tertiary-fixed-variant": "#00531e",
+              "on-secondary-fixed": "#00210b",
+              "tertiary-fixed-dim": "#3ce36a",
+              "surface-container-high": "#ebe7ec",
+              "primary": "#2e0052",
+              "secondary-fixed-dim": "#00e475",
+              "surface-variant": "#e5e1e7",
+              "outline": "#7d7483",
+              "tertiary-fixed": "#69ff87",
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#62ff96",
+              "on-surface-variant": "#4c4451",
+              "on-primary-fixed-variant": "#622599",
+              "on-tertiary-fixed": "#002108",
+              "secondary-container": "#3fff8b",
+              "surface-container-highest": "#e5e1e7"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(253, 248, 253, 0.8);
+        backdrop-filter: blur(20px);
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 w-full no-line tonal-shift bg-surface-container-low">
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-indigo-900 hover:bg-zinc-100 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-xl font-extrabold text-indigo-950 font-headline tracking-tight">Pix Pro</h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-white overflow-hidden ring-2 ring-primary-fixed">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling businessman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlMcZipwZy4-BUmc0ZO6G09pC4R2OoHR72sPfIq116J6d_28ibQIe5cbeB1lfkCGzRqn_rH_Kt9GYrUQvufgkOaPgUmfRgxpjBqjrm0T3ilzv7oKlqCEpni2rQc2Ja0jRXvTSRSWe_naLXhZtAt0mB9q7hegcyWc6ZlUW6mF_muq6kfbjF0xTjzgfosIOsyfTYHjqOBLpGyy09NRkp7cYft9lWGk8_wSOeE9c_SryF9bp-JIAIc1PFMYO_iJhz7GGSUpPo-FFBVcjx"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Editorial Header -->
+<section class="mb-10">
+<span class="font-label text-xs font-bold uppercase tracking-[0.2em] text-on-primary-container mb-2 block">Cobrança Instantânea</span>
+<h2 class="text-4xl font-extrabold text-primary font-headline leading-tight tracking-tight">
+                Receba pagamentos <br/> com <span class="text-on-secondary-container">Pix</span>.
+            </h2>
+<p class="text-on-surface-variant mt-3 text-lg">Preencha os dados abaixo para gerar seu QR Code personalizado de forma segura.</p>
+</section>
+<!-- Form Section -->
+<div class="space-y-8">
+<!-- Main Input Group -->
+<div class="bg-surface-container-lowest rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+<div class="space-y-6">
+<!-- Pix Key Field -->
+<div class="group">
+<label class="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-2 block ml-1">Chave Pix</label>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-none rounded-2xl py-5 px-6 text-on-surface font-semibold placeholder:text-outline focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-highest transition-all duration-300" placeholder="CPF, E-mail, Telefone ou Aleatória" type="text"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 text-primary/40">
+<span class="material-symbols-outlined">vpn_key</span>
+</div>
+</div>
+</div>
+<!-- Row: Name and City -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="group">
+<label class="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-2 block ml-1">Nome do Recebedor</label>
+<input class="w-full bg-surface-container-low border-none rounded-2xl py-5 px-6 text-on-surface font-semibold placeholder:text-outline focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-highest transition-all duration-300" placeholder="Nome completo" type="text"/>
+</div>
+<div class="group">
+<label class="font-label text-xs font-bold uppercase tracking-wider text-on-surface-variant mb-2 block ml-1">Cidade</label>
+<input class="w-full bg-surface-container-low border-none rounded-2xl py-5 px-6 text-on-surface font-semibold placeholder:text-outline focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-highest transition-all duration-300" placeholder="Cidade do recebedor" type="text"/>
+</div>
+</div>
+<!-- Amount Field -->
+<div class="bg-primary-fixed/30 p-1 rounded-[2rem]">
+<div class="bg-surface-container-lowest rounded-[1.8rem] p-6 group transition-all">
+<label class="font-label text-xs font-bold uppercase tracking-wider text-primary mb-1 block">Valor Opcional</label>
+<div class="flex items-center gap-3">
+<span class="text-2xl font-extrabold text-primary font-headline">R$</span>
+<input class="w-full bg-transparent border-none text-4xl font-extrabold text-on-surface placeholder:text-outline-variant p-0 focus:ring-0" placeholder="0,00" type="number"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-primary-container rounded-full blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+<button class="relative w-full bg-gradient-to-br from-primary to-primary-container text-on-primary py-6 rounded-full font-headline font-bold text-lg flex items-center justify-center gap-3 active:scale-[0.98] transition-all shadow-xl">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">qr_code_2</span>
+                    Gerar QR Code
+                </button>
+</div>
+<p class="text-center text-outline text-sm font-label">
+                O QR Code gerado segue os padrões do Banco Central do Brasil.
+            </p>
+</div>
+<!-- Recent Charges - Editorial Bento Style -->
+<section class="mt-16 mb-12">
+<div class="flex justify-between items-end mb-6">
+<h3 class="text-2xl font-bold text-primary font-headline">Recentes</h3>
+<button class="text-on-primary-fixed-variant font-label text-sm font-bold uppercase tracking-widest">Ver Tudo</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Bento Card 1 -->
+<div class="bg-surface-container-low p-6 rounded-3xl flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-secondary-container rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-on-secondary-container">payments</span>
+</div>
+<span class="font-label text-[10px] font-bold uppercase bg-surface-container-high px-2 py-1 rounded-full text-on-surface-variant">Ontem</span>
+</div>
+<div>
+<p class="font-bold text-primary">Joaquim Silva</p>
+<p class="text-2xl font-extrabold text-on-surface font-headline">R$ 150,00</p>
+</div>
+</div>
+<!-- Bento Card 2 -->
+<div class="bg-primary-fixed p-6 rounded-3xl flex flex-col justify-between h-40">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 bg-primary-container rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-white">bolt</span>
+</div>
+<span class="font-label text-[10px] font-bold uppercase bg-white/40 px-2 py-1 rounded-full text-primary">Há 2h</span>
+</div>
+<div>
+<p class="font-bold text-on-primary-fixed">Aluguel Ref.</p>
+<p class="text-2xl font-extrabold text-on-primary-fixed font-headline">R$ 1.200,00</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-3xl bg-surface/80 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.04)]">
+<div class="flex justify-around items-center pt-3 pb-8 px-4 w-full">
+<!-- Início Active -->
+<a class="flex flex-col items-center justify-center text-indigo-900 font-bold active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-inter text-[11px] font-semibold uppercase tracking-wider mt-1">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 hover:text-indigo-600 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-2xl">history</span>
+<span class="font-inter text-[11px] font-semibold uppercase tracking-wider mt-1">Histórico</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 hover:text-indigo-600 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-2xl">vpn_key</span>
+<span class="font-inter text-[11px] font-semibold uppercase tracking-wider mt-1">Chaves</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-400 hover:text-indigo-600 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-2xl">settings</span>
+<span class="font-inter text-[11px] font-semibold uppercase tracking-wider mt-1">Ajustes</span>
+</a>
+</div>
+</nav>
+<!-- Contextual Floating Action Button (FAB) - Suppression Logic Applied: Not shown as primary generator is already on page -->
+</body></html>

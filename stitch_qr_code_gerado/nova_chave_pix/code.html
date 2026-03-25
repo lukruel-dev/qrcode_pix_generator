@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-fixed": "#00210b",
+              "tertiary": "#002208",
+              "on-secondary-container": "#007237",
+              "error": "#ba1a1a",
+              "inverse-primary": "#ddb7ff",
+              "on-tertiary": "#ffffff",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#ebe7ec",
+              "on-primary-fixed-variant": "#622599",
+              "on-tertiary-fixed": "#002108",
+              "surface-dim": "#ddd9de",
+              "secondary": "#006d35",
+              "on-primary-container": "#ba7ef4",
+              "inverse-surface": "#313034",
+              "surface-tint": "#7b41b3",
+              "outline-variant": "#cec3d3",
+              "secondary-fixed": "#62ff96",
+              "surface-container-low": "#f7f2f8",
+              "surface": "#fdf8fd",
+              "tertiary-container": "#003a13",
+              "inverse-on-surface": "#f4eff5",
+              "secondary-fixed-dim": "#00e475",
+              "on-error-container": "#93000a",
+              "on-background": "#1c1b1f",
+              "secondary-container": "#3fff8b",
+              "on-secondary-fixed-variant": "#005226",
+              "background": "#fdf8fd",
+              "tertiary-fixed": "#69ff87",
+              "on-secondary": "#ffffff",
+              "on-tertiary-fixed-variant": "#00531e",
+              "surface-variant": "#e5e1e7",
+              "on-tertiary-container": "#00b148",
+              "primary-fixed-dim": "#ddb7ff",
+              "primary-fixed": "#f0dbff",
+              "on-error": "#ffffff",
+              "surface-bright": "#fdf8fd",
+              "primary-container": "#4b0082",
+              "error-container": "#ffdad6",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#7d7483",
+              "on-surface-variant": "#4c4451",
+              "tertiary-fixed-dim": "#3ce36a",
+              "on-surface": "#1c1b1f",
+              "surface-container": "#f1ecf2",
+              "surface-container-highest": "#e5e1e7",
+              "primary": "#2e0052",
+              "on-primary-fixed": "#2c0050"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- TopAppBar Section -->
+<header class="fixed top-0 z-50 w-full bg-[#f7f2f8] dark:bg-[#2b2930] flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-[#e5e1e7] dark:hover:bg-[#49454f] transition-colors active:scale-95 duration-200 text-[#4B0082] dark:text-[#d0bcff]">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-xl font-extrabold tracking-tight font-headline text-[#2e0052] dark:text-[#e6e1e5]">
+                Pix Instantâneo
+            </h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant/20">
+<img alt="Profile Picture" class="w-full h-full object-cover" data-alt="User profile avatar portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCCmWZP7fr8iOf3k7u4MFr3bx8h8sDVu_3hxNHKSNlUZRCZxDoATKMJnWkVq8fRQQmOTgaLXfgARm4tV-L0JW73NUwItzah3IDPSPjYfMOMHvtQO4Qz5vGH8-yeA5q3cxf3IZXkeEWLKZgQO6Ddtmd9O5VBn67VMLQpPp0T174IYrKdTGVlR3HceYeMg9jZtnpUjwozH91fEKIz0pYXU3ICJpWb3G1dd7ODJpORP775DrgoGENBusfy36QOxOnWT78xibOYRYwgrs7"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+<!-- Editorial Header -->
+<section class="mb-10">
+<span class="text-sm font-label font-semibold text-on-primary-container tracking-wider uppercase mb-2 block">Configuração de Pix</span>
+<h2 class="text-4xl font-extrabold font-headline text-primary tracking-tight leading-tight">
+                Cadastrar nova<br/>chave de acesso.
+            </h2>
+<p class="mt-4 text-on-surface-variant font-label text-lg">
+                Escolha o tipo de chave que deseja vincular à sua conta para receber pagamentos instantâneos.
+            </p>
+</section>
+<!-- Form Section with Bento-inspired cards -->
+<form class="space-y-8">
+<!-- Type Selection Card -->
+<div class="bg-surface-container-low p-8 rounded-xl shadow-sm">
+<h3 class="text-sm font-label font-bold text-on-surface-variant mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">key</span> 1. TIPO DE CHAVE
+                </h3>
+<div class="grid grid-cols-2 gap-3">
+<label class="relative group cursor-pointer">
+<input checked="" class="peer sr-only" name="key_type" type="radio"/>
+<div class="flex flex-col gap-2 p-4 bg-surface rounded-lg border-2 border-transparent peer-checked:border-primary-container peer-checked:bg-primary-container/5 transition-all duration-200">
+<span class="material-symbols-outlined text-primary-container">badge</span>
+<span class="font-label font-semibold text-sm">CPF</span>
+</div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="key_type" type="radio"/>
+<div class="flex flex-col gap-2 p-4 bg-surface rounded-lg border-2 border-transparent peer-checked:border-primary-container peer-checked:bg-primary-container/5 transition-all duration-200">
+<span class="material-symbols-outlined text-primary-container">mail</span>
+<span class="font-label font-semibold text-sm">E-mail</span>
+</div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="key_type" type="radio"/>
+<div class="flex flex-col gap-2 p-4 bg-surface rounded-lg border-2 border-transparent peer-checked:border-primary-container peer-checked:bg-primary-container/5 transition-all duration-200">
+<span class="material-symbols-outlined text-primary-container">smartphone</span>
+<span class="font-label font-semibold text-sm">Celular</span>
+</div>
+</label>
+<label class="relative group cursor-pointer">
+<input class="peer sr-only" name="key_type" type="radio"/>
+<div class="flex flex-col gap-2 p-4 bg-surface rounded-lg border-2 border-transparent peer-checked:border-primary-container peer-checked:bg-primary-container/5 transition-all duration-200">
+<span class="material-symbols-outlined text-primary-container">shuffle</span>
+<span class="font-label font-semibold text-sm">Aleatória</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Key Input Card -->
+<div class="bg-surface-container-low p-8 rounded-xl shadow-sm">
+<h3 class="text-sm font-label font-bold text-on-surface-variant mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">edit</span> 2. DADOS DA CHAVE
+                </h3>
+<div class="relative">
+<input class="w-full h-16 px-6 bg-surface-container-highest border-none rounded-xl font-label text-lg focus:ring-2 focus:ring-primary-container/20 transition-all placeholder:text-on-surface-variant/50" placeholder="Digite sua chave" type="text"/>
+</div>
+<p class="mt-3 text-xs font-label text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">info</span>
+                    Sua chave deve estar devidamente formatada.
+                </p>
+</div>
+<!-- Bank Selection Card (Signature UI) -->
+<div class="bg-surface-container-low p-8 rounded-xl shadow-sm">
+<h3 class="text-sm font-label font-bold text-on-surface-variant mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">account_balance</span> 3. SELECIONAR INSTITUIÇÃO
+                </h3>
+<div class="flex flex-col gap-3">
+<label class="flex items-center justify-between p-4 bg-surface rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-bold">N</div>
+<span class="font-label font-semibold">Nubank</span>
+</div>
+<input class="w-5 h-5 text-primary-container border-outline-variant focus:ring-primary-container" name="bank" type="radio"/>
+</label>
+<label class="flex items-center justify-between p-4 bg-surface rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-secondary/10 flex items-center justify-center text-secondary font-bold">I</div>
+<span class="font-label font-semibold">Itaú</span>
+</div>
+<input class="w-5 h-5 text-primary-container border-outline-variant focus:ring-primary-container" name="bank" type="radio"/>
+</label>
+<label class="flex items-center justify-between p-4 bg-surface rounded-lg cursor-pointer hover:bg-surface-container-high transition-colors">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center text-orange-600 font-bold">IN</div>
+<span class="font-label font-semibold">Inter</span>
+</div>
+<input class="w-5 h-5 text-primary-container border-outline-variant focus:ring-primary-container" name="bank" type="radio"/>
+</label>
+</div>
+</div>
+<!-- Action Area (Transfer Glow Button) -->
+<div class="pt-4">
+<button class="w-full py-5 rounded-full bg-gradient-to-br from-[#2e0052] to-[#4b0082] text-white font-headline font-bold text-lg shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all duration-200" type="submit">
+                    Cadastrar Chave
+                </button>
+</div>
+</form>
+</main>
+<!-- BottomNavBar Section -->
+<nav class="fixed bottom-0 w-full rounded-t-[24px] z-50 bg-[#fdf8fd]/80 dark:bg-[#1c1b1f]/80 backdrop-blur-xl shadow-[0_-4px_32px_0_rgba(28,27,31,0.04)]">
+<div class="flex justify-around items-center px-4 pb-6 pt-3 w-full">
+<a class="flex flex-col items-center justify-center text-[#49454f] dark:text-[#cac4d0] px-5 py-1.5 hover:opacity-80 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide mt-1">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#e5e1e7] dark:bg-[#49454f] text-[#2e0052] dark:text-[#e6e1e5] rounded-full px-5 py-1.5 active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">qr_code_2</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide mt-1">Cobrar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49454f] dark:text-[#cac4d0] px-5 py-1.5 hover:opacity-80 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide mt-1">Histórico</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49454f] dark:text-[#cac4d0] px-5 py-1.5 hover:opacity-80 transition-opacity active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide mt-1">Ajustes</span>
+</a>
+</div>
+</nav>
+</body></html>

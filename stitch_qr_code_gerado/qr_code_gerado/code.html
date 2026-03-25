@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed": "#f0dbff",
+              "inverse-on-surface": "#f4eff5",
+              "on-primary": "#ffffff",
+              "on-tertiary-container": "#00b148",
+              "on-secondary": "#ffffff",
+              "surface-dim": "#ddd9de",
+              "primary-container": "#4b0082",
+              "secondary": "#006d35",
+              "inverse-primary": "#ddb7ff",
+              "on-surface": "#1c1b1f",
+              "on-error": "#ffffff",
+              "tertiary": "#002208",
+              "outline-variant": "#cec3d3",
+              "on-primary-fixed": "#2c0050",
+              "primary-fixed-dim": "#ddb7ff",
+              "surface-container": "#f1ecf2",
+              "tertiary-container": "#003a13",
+              "on-secondary-container": "#007237",
+              "on-background": "#1c1b1f",
+              "on-primary-container": "#ba7ef4",
+              "inverse-surface": "#313034",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f7f2f8",
+              "error": "#ba1a1a",
+              "background": "#fdf8fd",
+              "surface-bright": "#fdf8fd",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed-variant": "#005226",
+              "surface-tint": "#7b41b3",
+              "surface": "#fdf8fd",
+              "on-tertiary-fixed-variant": "#00531e",
+              "on-secondary-fixed": "#00210b",
+              "tertiary-fixed-dim": "#3ce36a",
+              "surface-container-high": "#ebe7ec",
+              "primary": "#2e0052",
+              "secondary-fixed-dim": "#00e475",
+              "surface-variant": "#e5e1e7",
+              "outline": "#7d7483",
+              "tertiary-fixed": "#69ff87",
+              "error-container": "#ffdad6",
+              "secondary-fixed": "#62ff96",
+              "on-surface-variant": "#4c4451",
+              "on-primary-fixed-variant": "#622599",
+              "on-tertiary-fixed": "#002108",
+              "secondary-container": "#3fff8b",
+              "surface-container-highest": "#e5e1e7"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .no-line { border: none !important; }
+      .tonal-shift { transition: background-color 0.3s ease; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body antialiased">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-low dark:bg-zinc-900 flex justify-between items-center px-6 h-16 w-full font-manrope font-bold tracking-tight">
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined text-indigo-900 dark:text-indigo-400">arrow_back</span>
+</button>
+<span class="text-xl font-extrabold text-indigo-950 dark:text-white">Receber Pix</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="Portrait of a smiling professional young man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmeI9cmbTP9qM9OWGGrpSy3EwYGhFp1o8ly6ZgQ_AsfcAdumBeKTqCv_6ZSXjT-BuoKV_-5WQ8BI9MzkArWG5kcNOnbhEAslk4mnK46teojAN-EiyDTacnbozHm1rnJ_vggdZ8EA5fvrP84qV8Pz6iOiYb9Ga6e04itxgYwlFw16NnrldV8eyYh-w0xrP2I3n29gx0SW4yKVj9yREVrx2Pd2CdAyVMHUVdf-HIxenZDmnL8tIDpK8r7UF9UGwRMrUDKJ5Ff8zu975K"/>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-md mx-auto">
+<!-- Editorial Value Section -->
+<section class="mb-10 text-center">
+<span class="font-label text-xs font-semibold uppercase tracking-widest text-on-surface-variant opacity-70 mb-2 block">Valor a receber</span>
+<h1 class="font-headline text-5xl font-extrabold tracking-tight text-primary">
+<span class="text-2xl font-bold opacity-60">R$</span> 450,00
+            </h1>
+</section>
+<!-- QR Code Glass Card -->
+<div class="relative group">
+<!-- Subtle Glow Effect -->
+<div class="absolute -inset-1 bg-gradient-to-tr from-secondary-fixed to-primary-container rounded-[2rem] blur opacity-10 group-hover:opacity-20 transition duration-1000"></div>
+<div class="relative bg-surface-container-lowest p-8 rounded-[2rem] shadow-sm flex flex-col items-center">
+<!-- QR Code Container -->
+<div class="w-full aspect-square bg-surface-container-low rounded-2xl flex items-center justify-center mb-6 p-4">
+<img alt="QR Code de Pagamento" class="w-full h-full object-contain" data-alt="Digital QR code for instant financial transaction" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT7kZcnDw-baULll0BvDCvwF12CiM0G18dx9hOJQA6mn-Ob8AIacINqWKB_Tz093QsaW5-6gZVtVsUdNQZ5v4hiMEKrO-qleYmi6MLtk2wmQ3ASIJolGJ2-OOJTPvKoGoitrJ9rH3kBmrQDnSJb-ByqaKfXAqJFdX5MDZpG72XQC9J_TcvwlJOiSI2VHVYmufg_q_C6MslfcxxVsCdXAQCtqAfBHWieIj2HRco8ap7j9PwmyKCID_6pHQKSVCjeeq3CZFKneur4P12"/>
+</div>
+<div class="flex items-center gap-2 px-4 py-2 bg-secondary-container/20 rounded-full mb-2">
+<span class="material-symbols-outlined text-on-secondary-container text-sm" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-label text-[11px] font-bold uppercase tracking-wider text-on-secondary-container">Pix Instantâneo</span>
+</div>
+<p class="font-label text-sm text-on-surface-variant text-center">Aponte a câmera para pagar agora</p>
+</div>
+</div>
+<!-- Copia e Cola Section -->
+<section class="mt-10 space-y-4">
+<h2 class="font-headline text-lg font-bold text-on-surface px-1">Pix Copia e Cola</h2>
+<div class="bg-surface-container-low p-4 rounded-xl flex items-center justify-between gap-4 group hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex-1 overflow-hidden">
+<p class="font-label text-xs text-on-surface-variant truncate font-medium">00020126580014BR.GOV.BCB.PIX0136pixpro-payment-demo-key-123455204000053039865406450.005802BR5913PIX PRO INC6009SAO PAULO62070503***6304E2B1</p>
+</div>
+<div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed shrink-0">
+<span class="material-symbols-outlined text-lg">content_copy</span>
+</div>
+</div>
+<!-- Share Button -->
+<button class="w-full h-16 rounded-full bg-gradient-to-r from-primary to-primary-container flex items-center justify-center gap-3 text-white shadow-xl active:scale-95 transition-all duration-200 mt-6 group">
+<span class="material-symbols-outlined group-hover:rotate-12 transition-transform">share</span>
+<span class="font-headline font-bold text-lg tracking-tight">Compartilhar QR Code</span>
+</button>
+</section>
+<!-- Dynamic Info Bento-ish Row -->
+<div class="mt-8 grid grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-5 rounded-2xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">timer</span>
+<div>
+<p class="font-label text-[10px] font-bold uppercase text-on-surface-variant opacity-60">Expira em</p>
+<p class="font-headline font-bold text-on-surface">23:59:45</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-5 rounded-2xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<div>
+<p class="font-label text-[10px] font-bold uppercase text-on-surface-variant opacity-60">Segurança</p>
+<p class="font-headline font-bold text-on-surface">Protegido</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-3xl bg-surface/80 dark:bg-zinc-950/80 backdrop-blur-xl shadow-[0_-4px_20px_rgba(0,0,0,0.04)] flex justify-around items-center pt-3 pb-8 px-4 w-full">
+<div class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 hover:text-indigo-600 dark:hover:text-green-300 active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined mb-1">bolt</span>
+<span class="font-inter text-[11px] font-semibold uppercase tracking-wider">Início</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 hover:text-indigo-600 dark:hover:text-green-300 active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined mb-1">history</span>
+<span class="font-inter text-[11px] font-semibold uppercase tracking-wider">Histórico</span>
+</div>
+<div class="flex flex-col items-center justify-center text-indigo-900 dark:text-green-400 font-bold active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">vpn_key</span>
+<span class="font-inter text-[11px] font-semibold uppercase tracking-wider">Chaves</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-400 dark:text-zinc-600 hover:text-indigo-600 dark:hover:text-green-300 active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined mb-1">settings</span>
+<span class="font-inter text-[11px] font-semibold uppercase tracking-wider">Ajustes</span>
+</div>
+</nav>
+</body></html>

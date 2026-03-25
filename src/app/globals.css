@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: 274 100% 16%; /* #2e0052 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 154 100% 21%; /* #006d35 */
+    --secondary-foreground: 0 0% 100%;
+    --background: 280 40% 98%; /* #fdf8fd */
+    --foreground: 270 9% 11%; /* #1c1b1f */
+    --muted: 270 10% 95%;
+    --muted-foreground: 270 9% 30%;
+    --border: 270 10% 90%;
+    --card: 0 0% 100%;
+    --card-foreground: 270 9% 11%;
+  }
+
+  .dark {
+    --primary: 274 60% 75%; /* #ddb7ff */
+    --primary-foreground: 274 100% 16%;
+    --secondary: 154 60% 75%; /* #00e475 */
+    --secondary-foreground: 154 100% 21%;
+    --background: 270 9% 11%;
+    --foreground: 270 10% 95%;
+    --muted: 270 10% 20%;
+    --muted-foreground: 270 9% 70%;
+    --border: 270 10% 25%;
+    --card: 270 10% 15%;
+    --card-foreground: 270 10% 95%;
+  }
+}
+
+@layer utilities {
+  .primary-gradient {
+    @apply bg-linear-to-br from-[#2e0052] to-[#4b0082];
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20;
+  }
+}
+
+body {
+  @apply bg-background text-foreground font-manrope transition-colors duration-300;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-manrope font-bold;
+}
+
+label {
+  @apply font-inter;
+}

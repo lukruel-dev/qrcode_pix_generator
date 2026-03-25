@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pix Charge - Minhas Chaves</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#ddb7ff",
+              "surface-bright": "#fdf8fd",
+              "primary-fixed": "#f0dbff",
+              "on-error": "#ffffff",
+              "tertiary": "#002208",
+              "error": "#ba1a1a",
+              "on-tertiary": "#ffffff",
+              "on-secondary-fixed": "#00210b",
+              "inverse-surface": "#313034",
+              "on-primary": "#ffffff",
+              "tertiary-fixed": "#69ff87",
+              "surface-container-high": "#ebe7ec",
+              "inverse-on-surface": "#f4eff5",
+              "secondary-fixed": "#62ff96",
+              "secondary-container": "#3fff8b",
+              "on-surface": "#1c1b1f",
+              "surface-container-highest": "#e5e1e7",
+              "on-tertiary-fixed-variant": "#00531e",
+              "on-primary-fixed-variant": "#622599",
+              "on-primary-fixed": "#2c0050",
+              "tertiary-container": "#003a13",
+              "secondary-fixed-dim": "#00e475",
+              "on-primary-container": "#ba7ef4",
+              "outline": "#7d7483",
+              "surface-dim": "#ddd9de",
+              "surface-container-low": "#f7f2f8",
+              "on-tertiary-fixed": "#002108",
+              "outline-variant": "#cec3d3",
+              "surface": "#fdf8fd",
+              "on-secondary-container": "#007237",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#3ce36a",
+              "surface-container-lowest": "#ffffff",
+              "on-background": "#1c1b1f",
+              "surface-variant": "#e5e1e7",
+              "on-surface-variant": "#4c4451",
+              "on-secondary": "#ffffff",
+              "primary-container": "#4b0082",
+              "background": "#fdf8fd",
+              "primary": "#2e0052",
+              "on-tertiary-container": "#00b148",
+              "on-secondary-fixed-variant": "#005226",
+              "secondary": "#006d35",
+              "surface-container": "#f1ecf2",
+              "error-container": "#ffdad6",
+              "surface-tint": "#7b41b3",
+              "inverse-primary": "#ddb7ff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(253, 248, 253, 0.8);
+        backdrop-filter: blur(20px);
+      }
+      .primary-gradient {
+        background: linear-gradient(135deg, #2e0052 0%, #4b0082 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#fdf8fd]/80 dark:bg-[#1c1b1f]/80 backdrop-blur-xl flex items-center justify-between px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#4B0082] dark:text-[#D0BCFE]" data-icon="account_balance_wallet">account_balance_wallet</span>
+<h1 class="font-['Manrope'] font-extrabold tracking-tight text-lg text-[#2e0052] dark:text-[#e5e1e7]">Pix Charge</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:opacity-80 transition-opacity active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="text-xs font-bold text-on-primary-fixed">JD</span>
+</div>
+</div>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Editorial Header Section -->
+<section class="mb-10">
+<h2 class="text-display-sm font-headline font-extrabold text-primary tracking-tight mb-2">Gerenciar Chaves</h2>
+<p class="text-on-surface-variant font-label text-sm leading-relaxed">Organize seus endereços de recebimento Pix em diferentes instituições financeiras.</p>
+</section>
+<!-- Bento Grid / Cards Container -->
+<div class="space-y-6">
+<!-- Nubank Card -->
+<div class="bg-surface-container-low rounded-xl p-6 flex items-center justify-between hover:bg-surface-container-high transition-colors group">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-full bg-[#820ad1] flex items-center justify-center text-white shadow-sm overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Purple bank logo on a circular background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3wspeHJugKW6PcqRJzexenqIbbYMZy5ylhVDAj5BN4WVPn2WnfSTrWJU78gKDx0xgnDtwc_STWa23-Ie001FiRf2ts6fkzm_AJyY1gtCm9WpMKBocGrHtlsDP6LfDvA5U6CEWAyFRBxqgRl6E54raNRcfF15xGfBbZqVcClXzqnqH8-1sVHpKDPJkn4L9s7801wlHvU3ghMfpGclTYZR8JRhB6RfWBnJnM15F6OMldBOeAbnNSkofY3HwVXMlI7YNgGQH0Vo999-1"/>
+</div>
+<div>
+<h3 class="font-headline font-bold text-on-surface text-lg">Nubank</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="material-symbols-outlined text-primary text-base" data-icon="badge">badge</span>
+<p class="font-label text-sm text-on-surface-variant">CPF: 123.***.***-00</p>
+</div>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<!-- Itaú Card -->
+<div class="bg-surface-container-low rounded-xl p-6 flex items-center justify-between hover:bg-surface-container-high transition-colors group">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-full bg-[#ec7000] flex items-center justify-center text-white shadow-sm overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Orange bank logo icon circular" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACfnnTi9tfySiYcbzJo9jwl4jTfkUTs3fvYWmAbzr4d8ka4OUeQu4gePQrPVCdFvvbyCa-Rhxvkngg9zAxvc97mMOZyt5dHoydopLq3OcNDZtFQD7Rbh7Cz7mE2H0Sm7eCI6BgBceyr57OULFfZMadgnfMrRMEC0U70Y72sxTIEr_nz7B4scjr1eXzbNqUGSBF4HMhuGLVRoCvQyM2ZHTLKIXKZhzi-IN7_RdTV6-NkyGfwE20Ve8KpGQpQAhBHczQwzVPDYWHDYLy"/>
+</div>
+<div>
+<h3 class="font-headline font-bold text-on-surface text-lg">Itaú Unibanco</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="material-symbols-outlined text-primary text-base" data-icon="smartphone">smartphone</span>
+<p class="font-label text-sm text-on-surface-variant">Celular: (11) 9****-1234</p>
+</div>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<!-- Inter Card -->
+<div class="bg-surface-container-low rounded-xl p-6 flex items-center justify-between hover:bg-surface-container-high transition-colors group">
+<div class="flex items-center gap-5">
+<div class="w-14 h-14 rounded-full bg-[#ff7a00] flex items-center justify-center text-white shadow-sm overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Orange digital bank logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-jCGvfy_5-g9BhnPVQkW0GDZxHujw2YDzXhuSL3J8Tw-7KYmrgJX3NNDDl5DZK4uMKJOUiZCAEBx1Xn1uwX4oK_0yt4Qy8LXDMjBtaF-DDFTtOk7IQU7Gj-ovem5L6xjuYXmboFGn6ZTAXvmWDIb_pXNDJFCNT8RYiJVazrM6iX4Qthk_WH-lQaZi3PUxXPymH_00HWDVR49iXkKZ4UFFMx5cCFj91JWvIGEAV9-S_r_QtHI3HC7Jiwn3L5xWZKYw4GfVTzsT4fMa"/>
+</div>
+<div>
+<h3 class="font-headline font-bold text-on-surface text-lg">Banco Inter</h3>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="material-symbols-outlined text-primary text-base" data-icon="mail">mail</span>
+<p class="font-label text-sm text-on-surface-variant">E-mail: cont***@email.com</p>
+</div>
+</div>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest transition-all active:scale-90">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+<!-- Signature Component: Transfer Glow Concept (Add Button) -->
+<div class="relative mt-8 group cursor-pointer">
+<div class="absolute inset-0 bg-secondary-container blur-2xl opacity-10 group-hover:opacity-20 transition-opacity rounded-full"></div>
+<div class="relative bg-surface-container-lowest rounded-3xl p-8 flex flex-col items-center justify-center text-center border-2 border-dashed border-outline-variant/30 hover:border-primary/40 transition-all">
+<div class="w-16 h-16 rounded-full bg-secondary-container/20 flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="add_circle" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+</div>
+<h4 class="font-headline font-bold text-primary mb-1">Nova Chave Pix</h4>
+<p class="font-label text-xs text-on-surface-variant">Cadastre uma nova chave em segundos</p>
+</div>
+</div>
+</div>
+<!-- Limits Information -->
+<section class="mt-12 p-6 bg-surface-container-low rounded-2xl">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary" data-icon="info">info</span>
+<h4 class="font-headline font-bold text-sm text-primary uppercase tracking-widest">Informações Importantes</h4>
+</div>
+<ul class="space-y-3 font-label text-sm text-on-surface-variant">
+<li class="flex gap-3">
+<span class="w-1 h-1 bg-primary rounded-full mt-2"></span>
+                    Você pode ter até 5 chaves por conta pessoa física.
+                </li>
+<li class="flex gap-3">
+<span class="w-1 h-1 bg-primary rounded-full mt-2"></span>
+                    A portabilidade de chaves leva em média 7 dias úteis.
+                </li>
+</ul>
+</section>
+</main>
+<!-- Floating Action Button Area (Contextual suppression applied elsewhere, but here it's vital) -->
+<div class="fixed bottom-32 right-6 z-50 md:hidden">
+<button class="primary-gradient w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-white active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="add" style="font-variation-settings: 'FILL' 0, 'wght' 600;">add</span>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-[#fdf8fd]/80 dark:bg-[#1c1b1f]/80 backdrop-blur-xl z-50 rounded-t-[32px] shadow-[0_-4px_32px_rgba(28,27,31,0.04)]">
+<a class="flex flex-col items-center justify-center text-[#49454f] dark:text-[#cac4d0] px-5 py-2 hover:bg-[#f1ecf2] dark:hover:bg-[#322f35] rounded-full transition-all duration-300 ease-out active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#e5e1e7] dark:bg-[#49454f] text-[#2e0052] dark:text-[#e5e1e7] rounded-full px-5 py-2 transition-all duration-300 ease-out active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="vpn_key" style="font-variation-settings: 'FILL' 1;">vpn_key</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Chaves</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#49454f] dark:text-[#cac4d0] px-5 py-2 hover:bg-[#f1ecf2] dark:hover:bg-[#322f35] rounded-full transition-all duration-300 ease-out active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-['Inter'] text-[11px] font-medium tracking-wide">Histórico</span>
+</a>
+</nav>
+</body></html>

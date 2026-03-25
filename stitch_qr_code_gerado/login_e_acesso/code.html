@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pix Flow - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-fixed": "#69ff87",
+              "on-secondary": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-container-low": "#f7f2f8",
+              "on-error-container": "#93000a",
+              "surface-container-highest": "#e5e1e7",
+              "on-error": "#ffffff",
+              "on-secondary-fixed-variant": "#005226",
+              "surface-container-high": "#ebe7ec",
+              "surface-bright": "#fdf8fd",
+              "primary": "#2e0052",
+              "on-surface-variant": "#4c4451",
+              "surface": "#fdf8fd",
+              "on-tertiary-container": "#00b148",
+              "on-background": "#1c1b1f",
+              "inverse-on-surface": "#f4eff5",
+              "on-primary-fixed-variant": "#622599",
+              "error": "#ba1a1a",
+              "on-secondary-container": "#007237",
+              "on-primary-container": "#ba7ef4",
+              "on-primary": "#ffffff",
+              "secondary-container": "#3fff8b",
+              "surface-tint": "#7b41b3",
+              "primary-fixed-dim": "#ddb7ff",
+              "primary-container": "#4b0082",
+              "inverse-primary": "#ddb7ff",
+              "surface-dim": "#ddd9de",
+              "surface-variant": "#e5e1e7",
+              "secondary-fixed-dim": "#00e475",
+              "primary-fixed": "#f0dbff",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#1c1b1f",
+              "on-tertiary-fixed-variant": "#00531e",
+              "surface-container": "#f1ecf2",
+              "background": "#fdf8fd",
+              "outline-variant": "#cec3d3",
+              "on-primary-fixed": "#2c0050",
+              "tertiary": "#002208",
+              "secondary": "#006d35",
+              "secondary-fixed": "#62ff96",
+              "inverse-surface": "#313034",
+              "on-tertiary-fixed": "#002108",
+              "tertiary-fixed-dim": "#3ce36a",
+              "outline": "#7d7483",
+              "on-secondary-fixed": "#00210b",
+              "tertiary-container": "#003a13",
+              "on-tertiary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Manrope"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .primary-gradient {
+        background: linear-gradient(135deg, #2e0052 0%, #4b0082 100%);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface dark:bg-on-background font-body text-on-surface transition-colors duration-300">
+<div class="min-h-screen flex flex-col items-center justify-center px-6 py-12 lg:px-8">
+<div class="w-full max-w-md space-y-8">
+<!-- Branding Header -->
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-2xl primary-gradient flex items-center justify-center mb-6 shadow-xl">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<h1 class="font-headline text-3xl font-extrabold tracking-tight text-primary dark:text-primary-fixed">
+                    Pix Flow
+                </h1>
+<p class="mt-2 text-on-surface-variant dark:text-outline text-sm font-label">
+                    Sua cobrança instantânea em um toque.
+                </p>
+</div>
+<div class="mt-10 space-y-6">
+<!-- Google Social Login -->
+<button class="w-full flex items-center justify-center gap-3 px-6 py-4 bg-surface-container-lowest dark:bg-surface-container-low border border-outline-variant/30 rounded-full hover:bg-surface-container-high dark:hover:bg-surface-container-highest transition-all duration-200 active:scale-95 group">
+<img alt="Google Logo" class="w-5 h-5" data-alt="Google colorful letter G logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZjMORgCQyGQ5OCNj8EEHIn219vfvleMFIGgvEU4hdKoeNrrvoC-a5ov5V-gIKQ7n9T-ozZmrVD9MGqAf0CKqr3BJySXtIHndKFdJRQqlle3gfkzNOMxHMCQBcQ0L3iy_jGiPzNKAIiVlvFJF8yTORNg6sg1ejzxG25lDg-cKJxAuxuCJnSxgAXFtd2b1qoQdkQGy_60Wh8DscCpaYsz43yEhxmcIrxCuukPqkgK2OEaKCii1MxBm8LAOaO3vDYAuA5x4OdywjF_-Y"/>
+<span class="font-label font-semibold text-on-surface-variant dark:text-on-surface">Continuar com Google</span>
+</button>
+<!-- Divider -->
+<div class="relative flex items-center py-4">
+<div class="flex-grow border-t border-outline-variant/20"></div>
+<span class="flex-shrink mx-4 text-xs font-label uppercase tracking-[0.2em] text-outline">ou</span>
+<div class="flex-grow border-t border-outline-variant/20"></div>
+</div>
+<!-- Login Form -->
+<form class="space-y-5" onsubmit="return false;">
+<div class="space-y-4">
+<!-- Email Input -->
+<div class="relative group">
+<label class="block text-xs font-label font-bold text-on-surface-variant dark:text-outline uppercase tracking-wider ml-4 mb-1" for="email">
+                                E-mail
+                            </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-outline group-focus-within:text-primary dark:group-focus-within:text-primary-fixed-dim transition-colors" data-icon="mail">mail</span>
+<input autocomplete="email" class="w-full pl-12 pr-4 py-4 bg-surface-container-low dark:bg-surface-container-highest/10 border-none rounded-xl font-label text-on-surface focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary-fixed-dim/20 outline-none transition-all placeholder:text-outline/50" id="email" name="email" placeholder="exemplo@email.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password Input -->
+<div class="relative group">
+<label class="block text-xs font-label font-bold text-on-surface-variant dark:text-outline uppercase tracking-wider ml-4 mb-1" for="password">
+                                Senha
+                            </label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-outline group-focus-within:text-primary dark:group-focus-within:text-primary-fixed-dim transition-colors" data-icon="lock">lock</span>
+<input autocomplete="current-password" class="w-full pl-12 pr-4 py-4 bg-surface-container-low dark:bg-surface-container-highest/10 border-none rounded-xl font-label text-on-surface focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary-fixed-dim/20 outline-none transition-all placeholder:text-outline/50" id="password" name="password" placeholder="••••••••" required="" type="password"/>
+</div>
+</div>
+</div>
+<!-- Security Note -->
+<div class="flex items-start gap-2 px-4 py-3 bg-primary-container/10 dark:bg-primary-container/20 rounded-lg">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim text-sm mt-0.5" data-icon="info">info</span>
+<p class="text-[11px] font-label text-primary/80 dark:text-primary-fixed-dim/80 leading-relaxed">
+                            Para sua segurança, um código de verificação temporário será enviado ao seu e-mail cadastrado após clicar em Entrar.
+                        </p>
+</div>
+<!-- Action Buttons -->
+<div class="space-y-4 pt-2">
+<button class="w-full primary-gradient text-white py-4 px-6 rounded-full font-headline font-bold text-lg shadow-lg shadow-primary/20 hover:shadow-primary/40 active:scale-[0.98] transition-all duration-200" type="submit">
+                            Entrar
+                        </button>
+<div class="flex items-center justify-between px-2">
+<a class="text-xs font-label font-semibold text-primary dark:text-primary-fixed-dim hover:underline underline-offset-4" href="#">
+                                Esqueci minha senha
+                            </a>
+<a class="text-xs font-label font-semibold text-secondary dark:text-secondary-fixed hover:underline underline-offset-4" href="#">
+                                Criar conta
+                            </a>
+</div>
+</div>
+</form>
+</div>
+</div>
+<!-- Background Editorial Element -->
+<div class="fixed top-0 right-0 -z-10 w-1/3 h-full opacity-10 pointer-events-none overflow-hidden">
+<div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-secondary blur-3xl"></div>
+<div class="absolute top-1/2 -right-48 w-80 h-80 rounded-full bg-primary blur-3xl"></div>
+</div>
+<div class="fixed bottom-0 left-0 -z-10 w-1/3 h-full opacity-5 pointer-events-none overflow-hidden">
+<div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-primary-container blur-3xl"></div>
+</div>
+</div>
+<!-- Footer Copyright -->
+<div class="fixed bottom-8 w-full text-center px-6 pointer-events-none">
+<p class="text-[10px] font-label text-outline uppercase tracking-widest opacity-60">
+            © 2024 Pix Charge Tecnologia S.A.
+        </p>
+</div>
+</body></html>
