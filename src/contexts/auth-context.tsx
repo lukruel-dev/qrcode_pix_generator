@@ -29,23 +29,28 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      setUser(user);
-      
-      if (user) {
-        // Ensure user document exists for 2FA status tracking
-        const userRef = doc(db, "users", user.uid);
-        const userDoc = await getDoc(userRef);
+      try {
+        setUser(user);
         
-        if (!userDoc.exists()) {
-          await setDoc(userRef, {
-            email: user.email,
-            twoFactorEnabled: false,
-            createdAt: new Date().toISOString()
-          });
+        if (user) {
+          // Ensure user document exists for 2FA status tracking
+          // This might fail if Firestore is not enabled or rules are locked
+          const userRef = doc(db, "users", user.uid);
+          const userDoc = await getDoc(userRef);
+          
+          if (!userDoc.exists()) {
+            await setDoc(userRef, {
+              email: user.email,
+              twoFactorEnabled: false,
+              createdAt: new Date().toISOString()
+            }, { merge: true });
+          }
         }
+      } catch (error) {
+        console.error("AuthContext - Firestore error:", error);
+      } finally {
+        setLoading(false);
       }
-
-      setLoading(false);
       
       // Redirect if not logged in
       if (!user && pathname !== "/login" && pathname !== "/" && !pathname.startsWith("/splash")) {

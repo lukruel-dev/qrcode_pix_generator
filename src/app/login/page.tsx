@@ -23,6 +23,7 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleEmailAuth = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,13 +61,24 @@ export default function LoginPage() {
   };
 
   const handlePostLogin = async (user: any) => {
-    const userRef = doc(db, "users", user.uid);
-    const userDoc = await getDoc(userRef);
-    
-    if (userDoc.exists() && userDoc.data().twoFactorEnabled) {
-      setTempUser(user);
-      setShow2FA(true);
-    } else {
+    try {
+      setLoading(true);
+      const userRef = doc(db, "users", user.uid);
+      
+      // If Firestore is not enabled or permission denied, this will throw
+      const userDoc = await getDoc(userRef);
+      
+      if (userDoc.exists() && userDoc.data().twoFactorEnabled) {
+        setTempUser(user);
+        setShow2FA(true);
+        setLoading(false);
+      } else {
+        router.push("/dashboard");
+      }
+    } catch (err: any) {
+      console.error("Post-login error:", err);
+      // Fallback: if Firestore fails but Auth succeeded, go to dashboard anyway (2FA will just be disabled)
+      alert("Aviso: Falha ao carregar preferências de segurança. Entrando no modo padrão.");
       router.push("/dashboard");
     }
   };
