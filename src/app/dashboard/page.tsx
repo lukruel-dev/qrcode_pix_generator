@@ -10,9 +10,9 @@ export default function DashboardPage() {
   const { user } = useAuth();
   
   const stats = [
-    { label: "Chaves Ativas", value: "2", icon: Key, color: "bg-blue-500" },
-    { label: "Total Gerado", value: "R$ 4.250,00", icon: TrendingUp, color: "bg-emerald-500" },
-    { label: "Cobranças", value: "12", icon: QrCode, color: "bg-purple-500" },
+    { label: "Chaves Ativas", value: "0", icon: Key, color: "bg-blue-600 dark:bg-blue-500" },
+    { label: "Total Gerado", value: "R$ 0,00", icon: TrendingUp, color: "bg-emerald-600 dark:bg-emerald-500" },
+    { label: "Cobranças", value: "0", icon: QrCode, color: "bg-purple-600 dark:bg-purple-500" },
   ];
 
   return (
@@ -41,14 +41,14 @@ export default function DashboardPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-zinc-50 dark:bg-zinc-900 border border-border p-6 rounded-[2rem] flex items-center gap-6 shadow-sm hover:shadow-md transition-all duration-200"
+                className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 rounded-[2rem] flex items-center gap-6 shadow-sm hover:shadow-md transition-all duration-200"
               >
                 <div className={`w-14 h-14 rounded-2xl ${stat.color} flex items-center justify-center shadow-lg text-white`}>
                   <Icon className="w-7 h-7" />
                 </div>
                 <div>
-                  <p className="text-sm font-label text-muted-foreground uppercase tracking-wider">{stat.label}</p>
-                  <p className="text-2xl font-headline font-extrabold text-foreground">{stat.value}</p>
+                  <p className="text-sm font-label text-zinc-500 dark:text-zinc-400 font-bold uppercase tracking-wider">{stat.label}</p>
+                  <p className="text-2xl font-headline font-extrabold text-zinc-900 dark:text-zinc-100">{stat.value}</p>
                 </div>
               </motion.div>
             );
@@ -63,12 +63,12 @@ export default function DashboardPage() {
             transition={{ delay: 0.4 }}
             className="primary-gradient p-1 rounded-[2.5rem] shadow-xl group"
           >
-            <div className="bg-white dark:bg-zinc-950 p-10 rounded-[2.3rem] flex flex-col h-full">
+            <div className="bg-white dark:bg-zinc-900 p-10 rounded-[2.3rem] flex flex-col h-full">
               <div className="w-16 h-16 rounded-2xl primary-gradient flex items-center justify-center mb-6 shadow-lg">
                 <QrCode className="text-white w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-headline font-extrabold text-foreground mb-4">Gerar Novo PIX</h3>
-              <p className="text-muted-foreground font-label mb-10 flex-1">
+              <h3 className="text-2xl font-headline font-extrabold text-zinc-900 dark:text-zinc-100 mb-4">Gerar Novo PIX</h3>
+              <p className="text-zinc-500 dark:text-zinc-400 font-label mb-10 flex-1">
                 Crie um QRCode com valor e chave personalizada instantaneamente para seus clientes.
               </p>
               <Link 
@@ -86,12 +86,12 @@ export default function DashboardPage() {
             transition={{ delay: 0.5 }}
             className="bg-secondary p-1 rounded-[2.5rem] shadow-xl"
           >
-            <div className="bg-white dark:bg-zinc-950 p-10 rounded-[2.3rem] flex flex-col h-full">
+            <div className="bg-white dark:bg-zinc-900 p-10 rounded-[2.3rem] flex flex-col h-full">
               <div className="w-16 h-16 rounded-2xl bg-secondary flex items-center justify-center mb-6 shadow-lg">
                 <Plus className="text-white w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-headline font-extrabold text-foreground mb-4">Adicionar Chave</h3>
-              <p className="text-muted-foreground font-label mb-10 flex-1">
+              <h3 className="text-2xl font-headline font-extrabold text-zinc-900 dark:text-zinc-100 mb-4">Adicionar Chave</h3>
+              <p className="text-zinc-500 dark:text-zinc-400 font-label mb-10 flex-1">
                 Cadastre suas chaves PIX para que você possa utilizá-las rapidamente em suas cobranças.
               </p>
               <Link 
