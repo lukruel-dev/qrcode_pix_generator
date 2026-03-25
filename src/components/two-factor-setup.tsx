@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { authenticator } from "otplib";
+import { generateSecret, generateURI, verifySync } from "otplib";
 import { QRCodeSVG } from "qrcode.react";
 import { ShieldCheck, ShieldAlert, Key, CheckCircle2, Copy } from "lucide-react";
 import { db } from "@/lib/firebase";
@@ -26,8 +26,8 @@ export function TwoFactorSetup() {
       if (userDoc.exists() && userDoc.data().twoFactorEnabled) {
         setIsEnabled(true);
       } else {
-        const newSecret = authenticator.generateSecret();
-        const url = authenticator.keyuri(user.email!, "Pix Flow", newSecret);
+        const newSecret = generateSecret();
+        const url = generateURI({ secret: newSecret, label: user.email!, issuer: "Pix Flow" });
         setSecret(newSecret);
         setOtpUrl(url);
       }
@@ -39,7 +39,7 @@ export function TwoFactorSetup() {
 
   const verifyAndEnable = async () => {
     setStatus("verifying");
-    const isValid = authenticator.check(verificationCode, secret);
+    const isValid = verifySync({ token: verificationCode, secret, strategy: "totp" });
 
     if (isValid) {
       await updateDoc(doc(db, "users", user!.uid), {
@@ -61,9 +61,9 @@ export function TwoFactorSetup() {
         twoFactorSecret: null
       });
       setIsEnabled(false);
-      const newSecret = authenticator.generateSecret();
+      const newSecret = generateSecret();
       setSecret(newSecret);
-      setOtpUrl(authenticator.keyuri(user!.email!, "Pix Flow", newSecret));
+      setOtpUrl(generateURI({ secret: newSecret, label: user!.email!, issuer: "Pix Flow" }));
     }
   };
 

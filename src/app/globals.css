@@ -1,32 +1,35 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --primary: 274 100% 16%; /* #2e0052 */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 154 100% 21%; /* #006d35 */
-    --secondary-foreground: 0 0% 100%;
-    --background: 280 40% 98%; /* #fdf8fd */
-    --foreground: 270 9% 11%; /* #1c1b1f */
-    --muted: 270 10% 95%;
-    --muted-foreground: 270 9% 30%;
-    --border: 270 10% 90%;
-    --card: 0 0% 100%;
-    --card-foreground: 270 9% 11%;
-  }
+@theme {
+  --color-primary: hsl(274 100% 16%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(154 100% 21%);
+  --color-secondary-foreground: hsl(0 0% 100%);
+  --color-background: hsl(280 40% 98%);
+  --color-foreground: hsl(270 9% 11%);
+  --color-muted: hsl(270 10% 95%);
+  --color-muted-foreground: hsl(270 9% 30%);
+  --color-border: hsl(270 10% 90%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(270 9% 11%);
 
+  --font-manrope: var(--font-manrope);
+  --font-inter: var(--font-inter);
+}
+
+@layer base {
   .dark {
-    --primary: 274 60% 75%; /* #ddb7ff */
-    --primary-foreground: 274 100% 16%;
-    --secondary: 154 60% 75%; /* #00e475 */
-    --secondary-foreground: 154 100% 21%;
-    --background: 270 9% 11%;
-    --foreground: 270 10% 95%;
-    --muted: 270 10% 20%;
-    --muted-foreground: 270 9% 70%;
-    --border: 270 10% 25%;
-    --card: 270 10% 15%;
-    --card-foreground: 270 10% 95%;
+    --color-primary: hsl(274 60% 75%);
+    --color-primary-foreground: hsl(274 100% 16%);
+    --color-secondary: hsl(154 60% 75%);
+    --color-secondary-foreground: hsl(154 100% 21%);
+    --color-background: hsl(270 9% 11%);
+    --color-foreground: hsl(270 10% 95%);
+    --color-muted: hsl(270 10% 20%);
+    --color-muted-foreground: hsl(270 9% 70%);
+    --color-border: hsl(270 10% 25%);
+    --color-card: hsl(270 10% 15%);
+    --color-card-foreground: hsl(270 10% 95%);
   }
 }
 

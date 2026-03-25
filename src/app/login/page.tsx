@@ -7,7 +7,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { db, auth } from "@/lib/firebase";
-import { authenticator } from "otplib";
+import { verifySync } from "otplib";
 import { useRouter } from "next/navigation";
 import { signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword } from "firebase/auth";
 import { googleProvider } from "@/lib/firebase";
@@ -39,7 +39,7 @@ export default function LoginPage() {
     const userDoc = await getDoc(userRef);
     const secret = userDoc.data()?.twoFactorSecret;
     
-    if (authenticator.check(mfaCode, secret)) {
+    if (verifySync({ token: mfaCode, secret, strategy: "totp" })) {
       router.push("/dashboard");
     } else {
       setError("Código de verificação inválido.");
