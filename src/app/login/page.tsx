@@ -1,7 +1,7 @@
 "use client";
 
 import { useAuth } from "@/contexts/auth-context";
-import { Mail, Lock, Info, Wallet, ShieldCheck, Check } from "lucide-react";
+import { Mail, Lock, Info, Eye, EyeOff, Wallet, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { useState } from "react";
@@ -22,6 +22,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSignUp, setIsSignUp] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleEmailAuth = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -35,8 +36,12 @@ export default function LoginPage() {
       }
     } catch (err: any) {
       console.error("Auth error:", err);
-      setError(isSignUp ? "Erro ao criar conta. Verifique os dados." : "Email ou senha inválidos.");
-      setTimeout(() => setError(""), 3000);
+      if (err.code === "auth/configuration-not-found") {
+        setError("Erro: Login por Email/Senha não está ativado no Firebase Console.");
+      } else {
+        setError(isSignUp ? "Erro ao criar conta. Verifique os dados." : "Email ou senha inválidos.");
+      }
+      setTimeout(() => setError(""), 5000);
     }
   };
 
@@ -72,7 +77,9 @@ export default function LoginPage() {
       await handlePostLogin(result.user);
     } catch (err: any) {
       console.error("Google Login Error:", err);
-      if (err.code !== "auth/popup-closed-by-user") {
+      if (err.code === "auth/configuration-not-found") {
+        alert("Erro: O provedor Google não está ativado no Firebase Console. Por favor, ative-o na aba Authentication > Sign-in method.");
+      } else if (err.code !== "auth/popup-closed-by-user") {
         alert("Erro no login com Google: " + err.message);
       }
     }
@@ -154,18 +161,25 @@ export default function LoginPage() {
                     <label className="block text-[10px] font-label font-bold text-muted-foreground uppercase tracking-widest ml-4 mb-1" htmlFor="password">
                       Senha
                     </label>
-                    <div className="relative flex items-center shadow-sm rounded-2xl overflow-hidden bg-muted/30">
-                      <Lock className="absolute left-4 w-5 h-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
+                    <div className="relative flex items-center shadow-sm rounded-2xl overflow-hidden bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
+                      <Lock className="absolute left-4 w-5 h-5 text-zinc-500" />
                       <input 
                         autoComplete="current-password" 
                         value={password}
                         onChange={e => setPassword(e.target.value)}
-                        className="w-full pl-12 pr-4 py-4 bg-transparent border-none font-label text-zinc-900 dark:text-white focus:ring-2 focus:ring-primary/20 outline-none transition-all placeholder:text-muted-foreground/50" 
+                        className="w-full pl-12 pr-12 py-4 bg-transparent border-none font-label text-zinc-900 dark:text-white focus:ring-0 outline-none transition-all placeholder:text-zinc-400" 
                         id="password" 
                         placeholder="••••••••" 
                         required 
-                        type="password"
+                        type={showPassword ? "text" : "password"}
                       />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-4 text-zinc-400 hover:text-primary transition-colors"
+                      >
+                        {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                      </button>
                     </div>
                   </div>
                 </div>
